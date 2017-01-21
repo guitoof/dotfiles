@@ -1,0 +1,7 @@
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+
+# NODE
+export PATH="./node_modules/.bin:$PATH"
+
+# RUBY
+export PATH="$PATH:$HOME/.rvm/bin"
