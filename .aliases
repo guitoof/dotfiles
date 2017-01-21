@@ -1,0 +1,8 @@
+# NODE
+alias gulp=./node_modules/.bin/gulp
+alias sequelize=./node_modules/.bin/sequelize
+
+# FUCK
+eval "$(thefuck --alias)"
+# You can use whatever you want as an alias, like for Mondays:
+eval "$(thefuck --alias FUCK)"

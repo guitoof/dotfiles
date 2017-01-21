@@ -59,6 +59,12 @@ export PATH="./node_modules/.bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
+# Load the shell dotfiles
+for file in ~/.{path,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -80,14 +86,6 @@ export ANDROID_HOME=/Users/guitoof/Library/Android/sdk
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export NVM_DIR="/Users/guitoof/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -110,19 +108,10 @@ function _completemarks {
   reply=($(ls $MARKPATH))
 }
 
-# thefuck plugin
-eval "$(thefuck --alias)"
-# You can use whatever you want as an alias, like for Mondays:
-eval "$(thefuck --alias FUCK)"
-
-
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
 
 
-# Aliases
-alias gulp=./node_modules/.bin/gulp
-alias sequelize=./node_modules/.bin/sequelize
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
