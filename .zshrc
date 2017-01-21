@@ -81,35 +81,8 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Android
-export ANDROID_HOME=/Users/guitoof/Library/Android/sdk
-export PATH=$ANDROID_HOME/tools:$PATH
-export PATH=$ANDROID_HOME/platform-tools:$PATH
 
-
-export NVM_DIR="/Users/guitoof/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# jump mark unmark
-export MARKPATH=$HOME/.marks
-function jump {
-    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
-}
-function mark {
-    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
-}
-function unmark {
-    rm -i "$MARKPATH/$1"
-}
-function marks {
-    \ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
-}
-function _completemarks {
-  reply=($(ls $MARKPATH))
-}
-
-compctl -K _completemarks jump
-compctl -K _completemarks unmark
 
 
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
