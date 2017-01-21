@@ -60,7 +60,7 @@ export PATH="./node_modules/.bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 # Load the shell dotfiles
-for file in ~/.{path,exports,aliases,functions,extra}; do
+for file in ~/.{path,exports,aliases,functions,extra,jump}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

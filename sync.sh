@@ -21,7 +21,6 @@ function sync() {
 #	ls -A | grep -e ^\\. | while read file; do
 #		cat $file >> ~/${file};
 #    done;
-  source ~/.zshrc;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -34,3 +33,5 @@ else
 	fi;
 fi;
 unset sync;
+
+source ~/.zshrc;
