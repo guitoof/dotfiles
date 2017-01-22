@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd "$(dirname "${BASH_SOURCE}")";
+
 EXCLUDED_ITEMS=(
   ".DS_Store" ".git/" "sync.sh" "README.md"
 )
@@ -21,6 +23,7 @@ function sync() {
 #	ls -A | grep -e ^\\. | while read file; do
 #		cat $file >> ~/${file};
 #    done;
+  source "$HOME/.zshrc";
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -33,5 +36,3 @@ else
 	fi;
 fi;
 unset sync;
-
-source ~/.zshrc;
