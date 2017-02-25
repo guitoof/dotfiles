@@ -5,7 +5,7 @@
 
 [alias]
 
-	# Sortcut	
+	# Sortcut
 	st  = status
 	co  = checkout
 	pur = pull --rebase
@@ -123,8 +123,8 @@
 
 [color "branch"]
 
-	current = yellow reverse
-	local = yellow
+	current = cyan reverse
+	local = cyan
 	remote = green
 
 [color "diff"]
@@ -136,8 +136,8 @@
 
 [color "status"]
 
-	added = yellow
-	changed = green
+	added = green
+	changed = yellow
 	untracked = cyan
 
 [diff]
