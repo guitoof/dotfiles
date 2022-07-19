@@ -77,5 +77,25 @@ fi
 
 
 # Load version managers
+unset npm_config_prefix # Add this line
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # Load nvm
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # Load avn
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source /Users/guitoof/.rvm/scripts/rvm
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+
+# Terminal Navigation
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
+
+# added by travis gem
+[ -f /Users/guitoof/.travis/travis.sh ] && source /Users/guitoof/.travis/travis.sh
