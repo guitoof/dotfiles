@@ -1,6 +1,13 @@
 # dotfiles
 
-Synchronize your machine with the dotfiles contained in this repo:
+Synchronize your machine with the dotfiles contained in this repo
+
+### Prerequisites
+- [Oh My Zsh](https://ohmyz.sh)
+- rvm
+
+
+
 ```
 ./sync.sh
 ```
